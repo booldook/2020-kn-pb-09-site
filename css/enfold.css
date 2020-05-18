@@ -1,8 +1,8 @@
 html {font-size: 16px;}
-.wrapper {max-width: 1200px; margin: 0 auto;}
+.wrapper {max-width: 1200px; margin: 0 auto; position: relative;}
 
 /************ header **************/
-.header {padding: 0 2rem;}
+.header {padding: 0 2rem; position: fixed; width: 100%; max-width: 1200px; top: 0;}
 .header > .logo {float: left; width: 120px;}
 .header > .navi-wrap, .header > .navi-wrap-mobile {float: right;}
 .header > .navi-wrap {padding: 3rem;}
@@ -16,6 +16,8 @@ html {font-size: 16px;}
 .header .subs {position: absolute; width: 260px; left: 0; top: 0; padding-top: 4.25rem; display: none;}
 .header .subs > ul {background-color: #ccc;}
 .header .sub {padding: 0.5rem;}
+
+.main-wrap {margin-top: 7.5rem;}
 
 
 @media screen and (max-width: 767px) {
