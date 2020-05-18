@@ -1,7 +1,21 @@
+html {font-size: 16px;}
 .wrapper {max-width: 1200px; margin: 0 auto;}
 
+/************ header **************/
+.header {padding: 1.25rem; border: 1px solid red;}
+.header > .logo {float: left; width: 120px;}
+.header > .navi-wrap, .header > .navi-wrap-mobile {float: right;}
+.header > .navi-wrap {padding: 3rem;}
+.header > .navi-wrap > .navi {padding: 0.125rem 1rem; line-height: 1rem;}
+.header .bor-rt {border-right: 1px solid #ccc;}
+
+.header .navi {float: left;}
+.header > .navi-wrap-mobile {display: none;}
 
 
+@media screen and (max-width: 767px) {
+	html {font-size: 20px;}
+}
 
 
 /*
