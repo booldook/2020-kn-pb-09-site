@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap');
+
 html {font-size: 16px;}
 .wrapper {max-width: 1200px; margin: 0 auto; position: relative;}
 
@@ -17,7 +19,11 @@ html {font-size: 16px;}
 .header .subs > ul {background-color: #ccc;}
 .header .sub {padding: 0.5rem;}
 
+/************ main-wrap **************/
 .main-wrap {margin-top: 7.5rem;}
+.main-wrap .main-arrow {position: absolute; width: 60px; height: 60px; border: 2px solid #fff; border-radius: 4px; text-align: center; line-height: 60px; font-size: 48px; top: 50%; transform: translateY(-50%); font-family: 'DM Mono', monospace; color: #fff; cursor: pointer;}
+.main-wrap .main-lt {left: 16px;}
+.main-wrap .main-rt {right: 16px;}
 
 
 @media screen and (max-width: 767px) {
