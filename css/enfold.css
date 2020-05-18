@@ -16,33 +16,52 @@ html {font-size: 16px;}
 .header > .navi-wrap-mobile .fa {font-size: 1.25rem;}
 .header > .navi-wrap-mobile > .navi {padding: 0 0.5rem;}
 .bt-lines {height: 1.25rem; position: relative; margin-left: 0.5rem;}
-.bt-lines > .line {width: 1.25rem; height: 2px; background-color: #bbb; position: absolute; left: 0;
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
-}
+.bt-lines > .line {width: 1.25rem; height: 2px; background-color: #bbb; position: absolute; left: 0; animation-duration: 0.5s; animation-fill-mode: forwards;}
 .bt-lines > .line:nth-child(1) {top: 3px;}
-.bt-lines > .line:nth-child(2) {top: calc(50% - 1px); animation-duration: 0.25s;}
+.bt-lines > .line:nth-child(2) {top: calc(50% - 1px);}
 .bt-lines > .line:nth-child(3) {bottom: 3px;}
 
+/*
 .line.line1 {animation-name: line1;}
 .line.line2 {animation-name: line2;}
 .line.line3 {animation-name: line3;}
+.line.line1-rev {animation-name: line1-rev;}
+.line.line2-rev {animation-name: line2-rev;}
+.line.line3-rev {animation-name: line3-rev;}
+*/
 
 @keyframes line1 {
-	0% {top: 0;}
+	0% {top: 3px;}
 	50% {top: calc(50% - 1px); transform: rotate(0deg)}
 	100% {top: calc(50% - 1px); transform: rotate(135deg)}
+}
+@keyframes line1-rev {
+	0% {top: calc(50% - 1px); transform: rotate(135deg)}
+	50% {top: calc(50% - 1px); transform: rotate(0deg)}
+	100% {top: 3px;}
 }
 
 @keyframes line2 {
 	0% {opacity: 1;}
+	50% {opacity: 0;}
 	100% {opacity: 0;}
 }
 
+@keyframes line2-rev {
+	0% {opacity: 0;}
+	50% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
 @keyframes line3 {
-	0% {bottom: 0;}
+	0% {bottom: 3px;}
 	50% {bottom: calc(50% - 1px); transform: rotate(0deg)}
 	100% {bottom: calc(50% - 1px); transform: rotate(225deg)}
+}
+@keyframes line3-rev {
+	0% {bottom: calc(50% - 1px); transform: rotate(225deg)}
+	50% {bottom: calc(50% - 1px); transform: rotate(0deg)}
+	100% {bottom: 3px;}
 }
 
 .header .navi {position: relative;}
