@@ -16,10 +16,34 @@ html {font-size: 16px;}
 .header > .navi-wrap-mobile .fa {font-size: 1.25rem;}
 .header > .navi-wrap-mobile > .navi {padding: 0 0.5rem;}
 .bt-lines {height: 1.25rem; position: relative; margin-left: 0.5rem;}
-.bt-lines > .line {width: 1.25rem; height: 2px; background-color: #bbb; position: absolute; left: 0;}
+.bt-lines > .line {width: 1.25rem; height: 2px; background-color: #bbb; position: absolute; left: 0;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
 .bt-lines > .line:nth-child(1) {top: 3px;}
-.bt-lines > .line:nth-child(2) {top: calc(50% - 1px);}
+.bt-lines > .line:nth-child(2) {top: calc(50% - 1px); animation-duration: 0.25s;}
 .bt-lines > .line:nth-child(3) {bottom: 3px;}
+
+.line.line1 {animation-name: line1;}
+.line.line2 {animation-name: line2;}
+.line.line3 {animation-name: line3;}
+
+@keyframes line1 {
+	0% {top: 0;}
+	50% {top: calc(50% - 1px); transform: rotate(0deg)}
+	100% {top: calc(50% - 1px); transform: rotate(135deg)}
+}
+
+@keyframes line2 {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@keyframes line3 {
+	0% {bottom: 0;}
+	50% {bottom: calc(50% - 1px); transform: rotate(0deg)}
+	100% {bottom: calc(50% - 1px); transform: rotate(225deg)}
+}
 
 .header .navi {position: relative;}
 .header .navi > .bar {width: calc(100% - 2rem); position: absolute; left: 1rem; height: 2px; background-color: #6cf0f0; top: 3rem; opacity: 0; transition: all 0.7s;}
