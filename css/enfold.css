@@ -1,0 +1,22 @@
+.wrapper {max-width: 1200px; margin: 0 auto;}
+
+
+
+
+
+/*
+.wrapper-fixed {width: 1200px; margin: 0 auto; border: 10px solid red; height: 50vh;}
+
+@media screen and (max-width: 1199px) {
+	.wrapper-fixed {width: 992px;}
+}
+@media screen and (max-width: 991px) {
+	.wrapper-fixed {width: 768px;}
+}
+@media screen and (max-width: 767px) {
+	.wrapper-fixed {width: 576px;}
+}
+@media screen and (max-width: 575px) {
+	.wrapper-fixed {width: 100%;}
+}
+*/
