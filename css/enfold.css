@@ -1,20 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap');
 
 html {font-size: 16px;}
+body {height: 5000px;}
 .wrapper {max-width: 1200px; margin: 0 auto; position: relative;}
 
+/************ mobile-wing **************/
+.mobile-wing {width: 100%; height: 100vh; background-color: rgba(0,0,0,0.3); z-index: 1000; position: fixed; top: 0;}
+
+
 /************ header **************/
-.header {padding: 0 2rem; position: fixed; width: 100%; max-width: 1200px; top: 0;}
+.header {padding: 0 2rem; position: fixed; width: 100%; max-width: 1200px; top: 0; background-color: #fff; z-index: 999;}
 .header > .logo {float: left; width: 120px;}
-.header > .navi-wrap, .header > .navi-wrap-mobile {float: right;}
+.header > .navi-wrap {float: right;}
 .header > .navi-wrap {padding: 3rem;}
 .header > .navi-wrap > .navi {padding: 0.125rem 1rem; line-height: 1rem;}
 .header .bor-rt {border-right: 1px solid #ccc;}
 
 .header .navi {float: left; cursor: pointer;}
-.header > .navi-wrap-mobile {display: none; padding: 1.75rem;}
-.header > .navi-wrap-mobile .fa {font-size: 1.25rem;}
-.header > .navi-wrap-mobile > .navi {padding: 0 0.5rem;}
+
+
+.navi-wrap-mobile {display: none; padding: 1.75rem; position: absolute; z-index: 1002; right: 2rem; }
+.navi-wrap-mobile .navi {float: left; cursor: pointer;}
+.navi-wrap-mobile .fa {font-size: 1.25rem;}
+.navi-wrap-mobile > .navi {padding: 0 0.5rem;}
 .bt-lines {height: 1.25rem; position: relative; margin-left: 0.5rem;}
 .bt-lines > .line {width: 1.25rem; height: 2px; background-color: #bbb; position: absolute; left: 0; animation-duration: 0.5s; animation-fill-mode: forwards;}
 .bt-lines > .line:nth-child(1) {top: 3px;}
@@ -31,14 +39,14 @@ html {font-size: 16px;}
 */
 
 @keyframes line1 {
-	0% {top: 3px;}
-	50% {top: calc(50% - 1px); transform: rotate(0deg)}
-	100% {top: calc(50% - 1px); transform: rotate(135deg)}
+	0% {top: 3px; background-color: #bbb;}
+	50% {top: calc(50% - 1px); transform: rotate(0deg); background-color: #000;}
+	100% {top: calc(50% - 1px); transform: rotate(135deg); background-color: #000;}
 }
 @keyframes line1-rev {
-	0% {top: calc(50% - 1px); transform: rotate(135deg)}
-	50% {top: calc(50% - 1px); transform: rotate(0deg)}
-	100% {top: 3px;}
+	0% {top: calc(50% - 1px); transform: rotate(135deg); background-color: #000;}
+	50% {top: calc(50% - 1px); transform: rotate(0deg); background-color: #000;}
+	100% {top: 3px; background-color: #bbb;}
 }
 
 @keyframes line2 {
@@ -54,14 +62,14 @@ html {font-size: 16px;}
 }
 
 @keyframes line3 {
-	0% {bottom: 3px;}
-	50% {bottom: calc(50% - 1px); transform: rotate(0deg)}
-	100% {bottom: calc(50% - 1px); transform: rotate(225deg)}
+	0% {bottom: 3px; background-color: #bbb;}
+	50% {bottom: calc(50% - 1px); transform: rotate(0deg); background-color: #000;}
+	100% {bottom: calc(50% - 1px); transform: rotate(225deg); background-color: #000;}
 }
 @keyframes line3-rev {
-	0% {bottom: calc(50% - 1px); transform: rotate(225deg)}
-	50% {bottom: calc(50% - 1px); transform: rotate(0deg)}
-	100% {bottom: 3px;}
+	0% {bottom: calc(50% - 1px); transform: rotate(225deg); background-color: #000;}
+	50% {bottom: calc(50% - 1px); transform: rotate(0deg); background-color: #000;}
+	100% {bottom: 3px; background-color: #bbb;}
 }
 
 .header .navi {position: relative;}
@@ -82,10 +90,11 @@ html {font-size: 16px;}
 
 
 @media screen and (max-width: 767px) {
+	.header {position: absolute;}
 	.header > .navi-wrap {display: none;}
-	.header > .navi-wrap-mobile {display: block;}
 	.header > .logo {width: 80px;}
-	.main-wrap {margin-top: 5rem;}
+	.navi-wrap-mobile {display: block;}
+	.main-wrap {margin-top: 0;}
 }
 
 
