@@ -13,11 +13,19 @@ $(".bt-lines").click(function(){
 		$(this).find(".line").eq(0).css("animation-name", "line1-rev");
 		$(this).find(".line").eq(1).css("animation-name", "line2-rev");
 		$(this).find(".line").eq(2).css("animation-name", "line3-rev");
+		$(".wing-wrap").stop().animate({"opacity": 0}, 500, function(){
+			$(this).css("display", "none");
+		});
+		$(".wing-rt").stop().animate({"right": "-40%", "opacity": 0}, 500, function(){
+			$(this).css("display", "none");
+		});
 	}
 	else {
 		$(this).find(".line").eq(0).css("animation-name", "line1");
 		$(this).find(".line").eq(1).css("animation-name", "line2");
 		$(this).find(".line").eq(2).css("animation-name", "line3");
+		$(".wing-wrap").stop().css("display", "block").animate({"opacity": 0.3}, 500);
+		$(".wing-rt").stop().css("display", "block").animate({"right": 0, "opacity": 1}, 500);
 	}
 });
 

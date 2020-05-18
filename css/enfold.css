@@ -4,10 +4,6 @@ html {font-size: 16px;}
 body {height: 5000px;}
 .wrapper {max-width: 1200px; margin: 0 auto; position: relative;}
 
-/************ mobile-wing **************/
-.mobile-wing {width: 100%; height: 100vh; background-color: rgba(0,0,0,0.3); z-index: 1000; position: fixed; top: 0;}
-
-
 /************ header **************/
 .header {padding: 0 2rem; position: fixed; width: 100%; max-width: 1200px; top: 0; background-color: #fff; z-index: 999;}
 .header > .logo {float: left; width: 120px;}
@@ -15,14 +11,12 @@ body {height: 5000px;}
 .header > .navi-wrap {padding: 3rem;}
 .header > .navi-wrap > .navi {padding: 0.125rem 1rem; line-height: 1rem;}
 .header .bor-rt {border-right: 1px solid #ccc;}
-
 .header .navi {float: left; cursor: pointer;}
 
-
+/************ navi-wrap-mobile **************/
 .navi-wrap-mobile {display: none; padding: 1.75rem; position: absolute; z-index: 1002; right: 2rem; }
-.navi-wrap-mobile .navi {float: left; cursor: pointer;}
+.navi-wrap-mobile .navi {float: left; cursor: pointer; padding: 0 0.5rem;}
 .navi-wrap-mobile .fa {font-size: 1.25rem;}
-.navi-wrap-mobile > .navi {padding: 0 0.5rem;}
 .bt-lines {height: 1.25rem; position: relative; margin-left: 0.5rem;}
 .bt-lines > .line {width: 1.25rem; height: 2px; background-color: #bbb; position: absolute; left: 0; animation-duration: 0.5s; animation-fill-mode: forwards;}
 .bt-lines > .line:nth-child(1) {top: 3px;}
@@ -81,12 +75,16 @@ body {height: 5000px;}
 .header .sub {padding: 0.5rem;}
 
 /************ main-wrap **************/
-.main-wrap {margin-top: 7.5rem;}
+.main-wrap {margin-top: 7.5rem; position: relative;}
 .main-wrap .main-arrow {position: absolute; width: 60px; height: 60px; border: 2px solid #fff; border-radius: 4px; text-align: center; line-height: 60px; font-size: 48px; top: 50%; transform: translateY(-50%); font-family: 'DM Mono', monospace; color: #fff; cursor: pointer;}
 .main-wrap .main-lt {left: 16px;}
 .main-wrap .main-rt {right: 16px;}
 .main-wrap .pagers {position: absolute; bottom: 16px; left: 50%; transform: translate(-50%); color: #fff; font-weight: bold;}
 .main-wrap .pager {float: left; cursor: pointer;}
+
+/************ wing-wrap **************/
+.wing-wrap {width: 100%; height: 100vh; background-color: #000; z-index: 1000; position: fixed; top: 0; opacity: 0; display: none;}
+.wing-rt {width: 40%; height: 100vh; position: fixed; top: 0; right: -40%; background-color: #fff; z-index: 1001; opacity: 0; display: none;}
 
 
 @media screen and (max-width: 767px) {
@@ -94,7 +92,7 @@ body {height: 5000px;}
 	.header > .navi-wrap {display: none;}
 	.header > .logo {width: 80px;}
 	.navi-wrap-mobile {display: block;}
-	.main-wrap {margin-top: 0;}
+	.main-wrap {margin-top: 5rem;}
 }
 
 
