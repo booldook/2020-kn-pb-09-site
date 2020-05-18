@@ -2,7 +2,7 @@ html {font-size: 16px;}
 .wrapper {max-width: 1200px; margin: 0 auto;}
 
 /************ header **************/
-.header {padding: 1.25rem; border: 1px solid red;}
+.header {border: 1px solid red; padding: 0 2rem;}
 .header > .logo {float: left; width: 120px;}
 .header > .navi-wrap, .header > .navi-wrap-mobile {float: right;}
 .header > .navi-wrap {padding: 3rem;}
@@ -14,7 +14,13 @@ html {font-size: 16px;}
 
 
 @media screen and (max-width: 767px) {
-	html {font-size: 20px;}
+	html {font-size: 16px;}
+	.header > .navi-wrap {display: none;}
+	.header > .navi-wrap-mobile {display: block; padding: 1.75rem;}
+	.header > .navi-wrap-mobile .fa {font-size: 1.25rem;}
+	.header > .navi-wrap-mobile > .navi {padding: 0 0.5rem;}
+	.header > .logo {width: 80px;}
+	.header > .navi-wrap {}
 }
 
 
