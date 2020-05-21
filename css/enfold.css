@@ -1,7 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap');
 
-/************ header **************/
+body {height: 5000px; font-family: 'DM Mono', sans-serif;}
+.wrapper {max-width: 1200px; margin: auto;}
 
+/************ header **************/
+/* .header {border: 1px solid red; padding: 0 100px; display: flex; justify-content: space-between; align-items: center;}
+
+.header > .logo {width: 120px;}
+.header > .navi-pc {border: 1px solid green; display: flex;} */
+
+.header {border: 1px solid red; padding: 0 7.5rem;}
+.header > .logo {width: 7.5rem; float: left;}
+.header > .navi-pc {float: right; border: 1px solid green; padding: 3rem 0;}
+.header > .navi-pc > .navi {float: left; border-right: 1px solid #aaa; color: #aaa; padding: 0 1rem; font-weight: bold; cursor: pointer; transition: all 0.5s;}
+.header > .navi-pc > .navi:last-child {border-right: none;}
+.header > .navi-pc > .navi.active {color: #111;}
+.header > .navi-pc > .navi:hover {color: #111;}
+
+.navi-mobile {display: none;}
+.wing-wrap {display: none;}
 
 /************ navi-wrap-mobile **************/
 
