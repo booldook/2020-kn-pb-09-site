@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap');
+
+html {font-size: 16px;}
+body {height: 5000px;}
+.wrapper {max-width: 1200px; margin: 0 auto; position: relative;}
+
+/************ header **************/
+.header {padding: 0 2rem; position: fixed; width: 100%; max-width: 1200px; top: 0; background-color: #fff; z-index: 999;}
+.header > .logo {float: left; width: 120px;}
+.header > .navi-wrap {float: right;}
+.header > .navi-wrap {padding: 3rem;}
+.header > .navi-wrap > .navi {padding: 0.125rem 1rem; line-height: 1rem;}
+.header .bor-rt {border-right: 1px solid #ccc;}
+.header .navi {float: left; cursor: pointer;}
+
+/************ navi-wrap-mobile **************/
+.navi-wrap-mobile {display: none; padding: 1.75rem; position: absolute; z-index: 1002; right: 2rem; }
+.navi-wrap-mobile .navi {float: left; cursor: pointer; padding: 0 0.5rem;}
+.navi-wrap-mobile .fa {font-size: 1.25rem;}
+.bt-lines {height: 1.25rem; position: relative; margin-left: 0.5rem;}
+.bt-lines > .line {width: 1.25rem; height: 2px; background-color: #bbb; position: absolute; left: 0; animation-duration: 0.5s; animation-fill-mode: forwards;}
+.bt-lines > .line:nth-child(1) {top: 3px;}
+.bt-lines > .line:nth-child(2) {top: calc(50% - 1px);}
+.bt-lines > .line:nth-child(3) {bottom: 3px;}
+
+/*
+.line.line1 {animation-name: line1;}
+.line.line2 {animation-name: line2;}
+.line.line3 {animation-name: line3;}
+.line.line1-rev {animation-name: line1-rev;}
+.line.line2-rev {animation-name: line2-rev;}
+.line.line3-rev {animation-name: line3-rev;}
+*/
+
+@keyframes line1 {
+	0% {top: 3px; background-color: #bbb;}
+	50% {top: calc(50% - 1px); transform: rotate(0deg); background-color: #000;}
+	100% {top: calc(50% - 1px); transform: rotate(135deg); background-color: #000;}
+}
+@keyframes line1-rev {
+	0% {top: calc(50% - 1px); transform: rotate(135deg); background-color: #000;}
+	50% {top: calc(50% - 1px); transform: rotate(0deg); background-color: #000;}
+	100% {top: 3px; background-color: #bbb;}
+}
+
+@keyframes line2 {
+	0% {opacity: 1;}
+	50% {opacity: 0;}
+	100% {opacity: 0;}
+}
+
+@keyframes line2-rev {
+	0% {opacity: 0;}
+	50% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes line3 {
+	0% {bottom: 3px; background-color: #bbb;}
+	50% {bottom: calc(50% - 1px); transform: rotate(0deg); background-color: #000;}
+	100% {bottom: calc(50% - 1px); transform: rotate(225deg); background-color: #000;}
+}
+@keyframes line3-rev {
+	0% {bottom: calc(50% - 1px); transform: rotate(225deg); background-color: #000;}
+	50% {bottom: calc(50% - 1px); transform: rotate(0deg); background-color: #000;}
+	100% {bottom: 3px; background-color: #bbb;}
+}
+
+.header .navi {position: relative;}
+.header .navi > .bar {width: calc(100% - 2rem); position: absolute; left: 1rem; height: 2px; background-color: #6cf0f0; top: 3rem; opacity: 0; transition: all 0.7s;}
+.header .navi > .bar.active {top: 1.5rem; opacity: 1;}
+.header .subs {position: absolute; width: 260px; left: 0; top: 0; padding-top: 4.52rem; display: none;}
+.header .subs > ul {background-color: #fff; 
+	box-shadow: 0 -2px 8px rgba(0,0,0,0.3); padding: 0.5rem;}
+.header .sub {padding: 0.5rem;}
+
+/************ main-wrap **************/
+.main-wrap {margin-top: 7.5rem; position: relative;}
+.main-wrap .main-arrow {position: absolute; width: 60px; height: 60px; border: 2px solid #fff; border-radius: 4px; text-align: center; line-height: 60px; font-size: 48px; top: 50%; transform: translateY(-50%); font-family: 'DM Mono', monospace; color: #fff; cursor: pointer;}
+.main-wrap .main-lt {left: 16px;}
+.main-wrap .main-rt {right: 16px;}
+.main-wrap .pagers {position: absolute; bottom: 16px; left: 50%; transform: translate(-50%); color: #fff; font-weight: bold;}
+.main-wrap .pager {float: left; cursor: pointer;}
+
+/************ wing-wrap **************/
+.wing-wrap {width: 100%; height: 100vh; background-color: #000; z-index: 1000; position: fixed; top: 0; opacity: 0; display: none;}
+.wing-rt {width: 40%; height: 100vh; position: fixed; top: 0; right: -40%; background-color: #fff; z-index: 1001; opacity: 0; display: none;}
+
+
+@media screen and (max-width: 767px) {
+	.header {position: absolute;}
+	.header > .navi-wrap {display: none;}
+	.header > .logo {width: 80px;}
+	.navi-wrap-mobile {display: block;}
+	.main-wrap {margin-top: 5rem;}
+}
+
+
+/*
+.wrapper-fixed {width: 1200px; margin: 0 auto; border: 10px solid red; height: 50vh;}
+
+@media screen and (max-width: 1199px) {
+	.wrapper-fixed {width: 992px;}
+}
+@media screen and (max-width: 991px) {
+	.wrapper-fixed {width: 768px;}
+}
+@media screen and (max-width: 767px) {
+	.wrapper-fixed {width: 576px;}
+}
+@media screen and (max-width: 575px) {
+	.wrapper-fixed {width: 100%;}
+}
+*/
