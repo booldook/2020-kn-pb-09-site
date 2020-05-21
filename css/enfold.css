@@ -11,24 +11,30 @@ body {height: 5000px; font-family: 'DM Mono', sans-serif;}
 .header > .logo {width: 120px;}
 .header > .navi-pc {border: 1px solid green; display: flex;} */
 
-.header {border: 1px solid red; padding: 0 7.5rem; font-family: 'Open Sans', sans-serif; font-size: 0.875rem; position: fixed; width: 100%; max-width: 1200px; z-index: 100;}
+.header {padding: 0 5rem; font-family: 'Open Sans', sans-serif; font-size: 0.875rem; position: fixed; width: 100%; max-width: 1200px; z-index: 100;}
 .header > .logo {width: 7.5rem; float: left;}
-.header > .navi-pc {float: right; padding: 3.25rem 0; display: none;}
+.header > .navi-pc {float: right; padding: 3.25rem 0;}
 .header > .navi-pc > .navi {float: left; border-right: 1px solid #ddd; color: #aaa; padding: 0 1rem; font-weight: bold; cursor: pointer; transition: all 0.5s; line-height: 1.2;}
 .header > .navi-pc > .navi:last-child {border-right: none;}
 .header > .navi-pc > .navi.active {color: #111;}
 .header > .navi-pc > .navi:hover {color: #111;}
 
-.navi-mobile {display: block; position: absolute; font-size: 1.25rem; right: 7.5rem; top: 2.75rem; z-index: 2;}
-.navi-mobile > li {float: left; margin-left: 1rem;}
-.navi-mobile .lines {position: relative; width: 20px; height: 14px; top: 6px;}
-.navi-mobile .line {width: 100%; height: 2px; background-color: #aaa; position: absolute;}
-.navi-mobile .line:nth-child(1) {top: 0;}
-.navi-mobile .line:nth-child(2) {top: 6px;}
-.navi-mobile .line:nth-child(3) {bottom: 0;}
+.header > .navi-mobile {display: none; position: absolute; font-size: 1.25rem; right: 5rem; top: 2.75rem; z-index: 2;}
+.header > .navi-mobile > li {float: left; margin-left: 1rem;}
+.header > .navi-mobile .lines {position: relative; width: 20px; height: 14px; top: 6px;}
+.header > .navi-mobile .line {width: 100%; height: 2px; background-color: #aaa; position: absolute;}
+.header > .navi-mobile .line:nth-child(1) {top: 0;}
+.header > .navi-mobile .line:nth-child(2) {top: 6px;}
+.header > .navi-mobile .line:nth-child(3) {bottom: 0;}
 
 
-.wing-wrap {display: none; width: 50%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 1; background-color: orange;}
+.header > .wing-wrap {display: none; width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 1; background-color: rgba(0,0,0,0.5);}
+
+.header .wing-conts {width: 350px; height: 100%; background-color: #fff; float: right; padding-top: 5rem;}
+.header .wing-conts .navi {padding: 1rem 2.5rem; font-size: 1.25rem; letter-spacing: 0.25rem; border-bottom: 1px solid #eee; cursor: pointer;}
+.header .wing-conts .navi:hover {background-color: #f4f4f4;}
+
+
 
 /************ navi-wrap-mobile **************/
 
@@ -36,4 +42,12 @@ body {height: 5000px; font-family: 'DM Mono', sans-serif;}
 /************ main-wrap **************/
 
 
-/************ wing-wrap **************/
+@media screen and (max-width: 767px) {
+	.header {padding: 0 2.5rem;}
+	.header > .logo {width: 5rem;}
+	.header > .navi-pc {display: none;}
+	.header > .navi-mobile {display: block; top: 1.625rem;}
+}
+
+
+
