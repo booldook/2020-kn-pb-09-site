@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
 body {height: 5000px; font-family: 'DM Mono', sans-serif;}
 .wrapper {max-width: 1200px; margin: auto;}
 
@@ -9,16 +11,24 @@ body {height: 5000px; font-family: 'DM Mono', sans-serif;}
 .header > .logo {width: 120px;}
 .header > .navi-pc {border: 1px solid green; display: flex;} */
 
-.header {border: 1px solid red; padding: 0 7.5rem;}
+.header {border: 1px solid red; padding: 0 7.5rem; font-family: 'Open Sans', sans-serif; font-size: 0.875rem; position: fixed; width: 100%; max-width: 1200px; z-index: 100;}
 .header > .logo {width: 7.5rem; float: left;}
-.header > .navi-pc {float: right; border: 1px solid green; padding: 3rem 0;}
-.header > .navi-pc > .navi {float: left; border-right: 1px solid #aaa; color: #aaa; padding: 0 1rem; font-weight: bold; cursor: pointer; transition: all 0.5s;}
+.header > .navi-pc {float: right; padding: 3.25rem 0; display: none;}
+.header > .navi-pc > .navi {float: left; border-right: 1px solid #ddd; color: #aaa; padding: 0 1rem; font-weight: bold; cursor: pointer; transition: all 0.5s; line-height: 1.2;}
 .header > .navi-pc > .navi:last-child {border-right: none;}
 .header > .navi-pc > .navi.active {color: #111;}
 .header > .navi-pc > .navi:hover {color: #111;}
 
-.navi-mobile {display: none;}
-.wing-wrap {display: none;}
+.navi-mobile {display: block; position: absolute; font-size: 1.25rem; right: 7.5rem; top: 2.75rem; z-index: 2;}
+.navi-mobile > li {float: left; margin-left: 1rem;}
+.navi-mobile .lines {position: relative; width: 20px; height: 14px; top: 6px;}
+.navi-mobile .line {width: 100%; height: 2px; background-color: #aaa; position: absolute;}
+.navi-mobile .line:nth-child(1) {top: 0;}
+.navi-mobile .line:nth-child(2) {top: 6px;}
+.navi-mobile .line:nth-child(3) {bottom: 0;}
+
+
+.wing-wrap {display: none; width: 50%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 1; background-color: orange;}
 
 /************ navi-wrap-mobile **************/
 
