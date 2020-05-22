@@ -2,8 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 
-body {height: 5000px; font-family: 'DM Mono', sans-serif;}
+body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .wrapper {max-width: 1200px; margin: auto; padding-top: 7.5rem;}
+.wrapper-small {padding: 4rem;}
 
 /************ header **************/
 /* .header {border: 1px solid red; padding: 0 100px; display: flex; justify-content: space-between; align-items: center;}
@@ -11,7 +12,8 @@ body {height: 5000px; font-family: 'DM Mono', sans-serif;}
 .header > .logo {width: 120px;}
 .header > .navi-pc {border: 1px solid green; display: flex;} */
 
-.header {padding: 0 5rem; font-family: 'Open Sans', sans-serif; font-size: 0.875rem; position: fixed; width: 100%; max-width: 1200px; z-index: 100; background-color: #fff; top: 0;}
+.header {padding: 0 5rem; font-size: 0.875rem; position: fixed; width: 100%; max-width: 1200px; z-index: 100; background-color: #fff; top: 0; transition: all 2s;}
+
 .header > .logo {width: 7.5rem; float: left;}
 .header > .navi-pc {float: right; padding: 3.25rem 0;}
 .header > .navi-pc > .navi {float: left; border-right: 1px solid #ddd; color: #aaa; padding: 0 1rem; font-weight: bold; cursor: pointer; transition: all 0.5s; line-height: 1.2;}
@@ -47,7 +49,10 @@ body {height: 5000px; font-family: 'DM Mono', sans-serif;}
 .main-wrap:hover .bt {opacity: 1;}
 .main-wrap:hover .pagers {opacity: 1;}
 
-
+/************ slogan-wrap **************/
+.slogan-wrap .title {font-size: 2.25rem; line-height: 1.1;}
+.slogan-wrap .contents {margin-top: 6rem; color: #aaa;}
+.slogan-wrap .content {float: left; width: 50%; padding-right: 4rem;}
 
 
 

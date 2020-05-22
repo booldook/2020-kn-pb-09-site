@@ -2,6 +2,7 @@
 
 
 /*********** 전역변수 ***********/
+var scTop = 0;
 var isWingShow = false;
 
 var $mainSlide = $(".main-wrap .slide");
@@ -75,6 +76,16 @@ function onResize() {
 	}
 }
 
+function onScroll() {
+	/*
+	scTop = $(this).scrollTop();
+	$(".header").css("background-color", "white");
+	if(scTop > 200) $(".header").css("background-color", "beige");
+	if(scTop > 1000) $(".header").css("background-color", "orange");
+	if(scTop > 2000) $(".header").css("background-color", "red");
+	*/
+}
+
 function onMainPrev() {
 	mainNow = (mainNow == 0) ? mainLast : mainNow - 1;
 	mainAni();
@@ -101,6 +112,7 @@ function onMainLeave() {
 /*********** 이벤트등록 ***********/
 $(".bt-wing").click(onWingClick);
 $(window).resize(onResize);
+$(window).scroll(onScroll);
 
 $(".main-wrap .bt-prev").click(onMainPrev);
 $(".main-wrap .bt-next").click(onMainNext);
