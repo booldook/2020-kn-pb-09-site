@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
 
 body {height: 5000px; font-family: 'DM Mono', sans-serif;}
-.wrapper {max-width: 1200px; margin: auto;}
+.wrapper {max-width: 1200px; margin: auto; padding-top: 7.5rem;}
 
 /************ header **************/
 /* .header {border: 1px solid red; padding: 0 100px; display: flex; justify-content: space-between; align-items: center;}
@@ -11,7 +11,7 @@ body {height: 5000px; font-family: 'DM Mono', sans-serif;}
 .header > .logo {width: 120px;}
 .header > .navi-pc {border: 1px solid green; display: flex;} */
 
-.header {padding: 0 5rem; font-family: 'Open Sans', sans-serif; font-size: 0.875rem; position: fixed; width: 100%; max-width: 1200px; z-index: 100;}
+.header {padding: 0 5rem; font-family: 'Open Sans', sans-serif; font-size: 0.875rem; position: fixed; width: 100%; max-width: 1200px; z-index: 100; background-color: #fff; top: 0;}
 .header > .logo {width: 7.5rem; float: left;}
 .header > .navi-pc {float: right; padding: 3.25rem 0;}
 .header > .navi-pc > .navi {float: left; border-right: 1px solid #ddd; color: #aaa; padding: 0 1rem; font-weight: bold; cursor: pointer; transition: all 0.5s; line-height: 1.2;}
@@ -34,15 +34,21 @@ body {height: 5000px; font-family: 'DM Mono', sans-serif;}
 .header .wing-conts .navi {padding: 1rem 2.5rem; font-size: 1.25rem; letter-spacing: 0.25rem; border-bottom: 1px solid #eee; cursor: pointer;}
 .header .wing-conts .navi:hover {background-color: #f4f4f4;}
 
-
-
-/************ navi-wrap-mobile **************/
-
-
+/* SASS SCSS LESS <- Webpack  */
 /************ main-wrap **************/
+.main-wrap {position: relative; border: 1px solid red;}
+.main-wrap .slides {position: relative;}
+.main-wrap .slide {position: absolute;}
+.main-wrap .bt {position: absolute; top: 50%; transform: translateY(-50%); width: 3rem; height: 3rem; border: 2px solid #fff; border-radius: 4px; text-align: center; color: #fff; font-size: 1.5rem; line-height: calc(3rem - 4px); cursor: pointer;}
+.main-wrap .bt-prev {left: 1.5rem;}
+.main-wrap .bt-next {right: 1.5rem;}
+
+
+
 
 
 @media screen and (max-width: 767px) {
+	.wrapper {padding-top: 5rem;}
 	.header {padding: 0 2.5rem;}
 	.header > .logo {width: 5rem;}
 	.header > .navi-pc {display: none;}
