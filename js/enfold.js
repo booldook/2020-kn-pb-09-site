@@ -10,13 +10,22 @@ var mainLast = $mainSlide.length - 1;
 var mainSpeed = 500;
 var mainGap = 3000;
 var mainInterval;
+var mainCircle = {off: '○', on: '●'};
 mainInit();
+mainPagerInit();
 
 /*********** 사용자정의 ***********/
 function mainInit() {
-	console.log($mainSlide);
 	$(".main-wrap .slides").empty();
 	$($mainSlide[mainNow]).appendTo(".main-wrap .slides").removeClass("slide");
+}
+
+function mainPagerInit() {
+	for(var i=0, html; i<=mainLast; i++) {
+		if(mainNow == i) html = '<span class="pager">'+mainCircle.on+'</span>';
+		else html = '<span class="pager">'+mainCircle.off+'</span>';
+		$(html).appendTo(".main-wrap .pagers").click(onMainPager);
+	}
 }
 
 function mainAni() {
@@ -74,7 +83,8 @@ function onMainNext() {
 }
 
 function onMainPager() {
-
+	mainNow = $(this).index();
+	mainAni();
 }
 
 /*********** 이벤트등록 ***********/
@@ -83,4 +93,3 @@ $(window).resize(onResize);
 
 $(".main-wrap .bt-prev").click(onMainPrev);
 $(".main-wrap .bt-next").click(onMainNext);
-$(".main-wrap .pager").click(onMainPager);
