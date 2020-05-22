@@ -10,9 +10,10 @@ var mainLast = $mainSlide.length - 1;
 var mainSpeed = 500;
 var mainGap = 3000;
 var mainInterval;
-var mainCircle = {off: '○', on: '●'};
+var mainPager = {off: '○', on: '●'};
 mainInit();
 mainPagerInit();
+onMainLeave();
 
 /*********** 사용자정의 ***********/
 function mainInit() {
@@ -22,13 +23,15 @@ function mainInit() {
 
 function mainPagerInit() {
 	for(var i=0, html; i<=mainLast; i++) {
-		if(mainNow == i) html = '<span class="pager">'+mainCircle.on+'</span>';
-		else html = '<span class="pager">'+mainCircle.off+'</span>';
+		if(mainNow == i) html = '<span class="pager">'+mainPager.on+'</span>';
+		else html = '<span class="pager">'+mainPager.off+'</span>';
 		$(html).appendTo(".main-wrap .pagers").click(onMainPager);
 	}
 }
 
 function mainAni() {
+	$(".main-wrap .pager").html(mainPager.off);
+	$(".main-wrap .pager").eq(mainNow).html(mainPager.on);
 	$($mainSlide[mainNow]).prependTo(".main-wrap .slides")
 	.css("opacity", 0)
 	.addClass("slide")
@@ -87,9 +90,18 @@ function onMainPager() {
 	mainAni();
 }
 
+function onMainHover() {
+	clearInterval(mainInterval);
+}
+
+function onMainLeave() {
+	mainInterval = setInterval(onMainNext, mainGap);
+}
+
 /*********** 이벤트등록 ***********/
 $(".bt-wing").click(onWingClick);
 $(window).resize(onResize);
 
 $(".main-wrap .bt-prev").click(onMainPrev);
 $(".main-wrap .bt-next").click(onMainNext);
+$(".main-wrap").hover(onMainHover, onMainLeave);
