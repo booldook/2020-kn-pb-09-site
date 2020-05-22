@@ -4,7 +4,28 @@
 /*********** 전역변수 ***********/
 var isWingShow = false;
 
+var $mainSlide = $(".main-wrap .slide");
+var mainNow = 0;
+var mainLast = $mainSlide.length - 1;
+var mainSpeed = 500;
+var mainGap = 3000;
+var mainInterval;
+mainInit();
+
 /*********** 사용자정의 ***********/
+function mainInit() {
+	console.log($mainSlide);
+	$(".main-wrap .slides").empty();
+	$($mainSlide[mainNow]).appendTo(".main-wrap .slides").removeClass("slide");
+}
+
+function mainAni() {
+	$($mainSlide[mainNow]).prependTo(".main-wrap .slides")
+	.css("opacity", 0)
+	.addClass("slide")
+	.stop()
+	.animate({"opacity": 1}, mainSpeed, mainInit);
+}
 
 
 /*********** 이벤트콜백 ***********/
@@ -42,6 +63,24 @@ function onResize() {
 	}
 }
 
+function onMainPrev() {
+	mainNow = (mainNow == 0) ? mainLast : mainNow - 1;
+	mainAni();
+}
+
+function onMainNext() {
+	mainNow = (mainNow == mainLast) ? 0 : mainNow + 1;
+	mainAni();
+}
+
+function onMainPager() {
+
+}
+
 /*********** 이벤트등록 ***********/
 $(".bt-wing").click(onWingClick);
 $(window).resize(onResize);
+
+$(".main-wrap .bt-prev").click(onMainPrev);
+$(".main-wrap .bt-next").click(onMainNext);
+$(".main-wrap .pager").click(onMainPager);

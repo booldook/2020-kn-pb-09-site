@@ -38,11 +38,11 @@ body {height: 5000px; font-family: 'DM Mono', sans-serif;}
 /************ main-wrap **************/
 .main-wrap {position: relative;}
 .main-wrap .slides {position: relative;}
-.main-wrap .slide {position: absolute;}
-.main-wrap .bt {position: absolute; top: 50%; transform: translateY(-50%); width: 3rem; height: 3rem; border: 2px solid #fff; border-radius: 4px; text-align: center; color: #fff; font-size: 1.5rem; line-height: calc(3rem - 4px); cursor: pointer; transition: all 0.5s; opacity: 0;}
+.main-wrap .slide {position: absolute; top: 0;}
+.main-wrap .bt {position: absolute; top: 50%; transform: translateY(-50%); width: 3rem; height: 3rem; border: 2px solid #fff; border-radius: 4px; text-align: center; color: #fff; font-size: 1.5rem; line-height: calc(3rem - 4px); cursor: pointer; transition: all 0.5s; opacity: 0; z-index: 11;}
 .main-wrap .bt-prev {left: 1.5rem;}
 .main-wrap .bt-next {right: 1.5rem;}
-.main-wrap .pagers {position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); transition: all 0.5s; opacity: 0;}
+.main-wrap .pagers {position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); transition: all 0.5s; opacity: 0; z-index: 11;}
 .main-wrap .pager {color: #fff; cursor: pointer;}
 .main-wrap:hover .bt {opacity: 1;}
 .main-wrap:hover .pagers {opacity: 1;}
