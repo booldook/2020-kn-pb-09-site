@@ -84,6 +84,15 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .about-slide .bt-next {right: 2rem;}
 
 
+/************ footer-wrap **************/
+.footer {margin-top: 8rem;}
+.footer .info {width: 33.3333%; float: left; padding-right: 5%;}
+.footer h4.title {padding: 1rem 0; color: #444;}
+.footer p.content {color: #aaa;}
+.footer p.content > span {display: inline-block; padding-bottom: 1rem;}
+.footer a:link {color: inherit; text-decoration: none;}
+.footer a:hover {color: #222; text-decoration: underline;}
+
 
 
 
