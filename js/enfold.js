@@ -4,6 +4,32 @@ for(var i=0; i<$(".loader").length; i++) {
 	console.log(	$(".loader").eq(i).parent()	);
 	console.log(	$(".loader").eq(i).parents()	);
 }
+
+loaderInit();
+function loaderInit() {
+	$(".loader-wrap").each(function(){
+		var $loaderWrap = $(this);
+		var $loader = $(this).find(".loader");
+		var $img = $(this).find("img");
+		console.log(	$img.eq(0).height(), $img.eq(1).height()	);
+		var len = $img.length;	//2
+		var cnt = 0;
+		$loader.show();
+		$img.on("load", function(){
+			cnt++;
+			if(cnt == len) {
+				console.log(	$img.eq(0).height(), $img.eq(1).height()	);
+				$loader.hide();
+				// main-wrap을 위한 곳
+				if($loaderWrap.hasClass("main-wrap")) {
+					mainInit();
+					mainPagerInit();
+					onMainLeave();
+				}
+			}
+		});
+	});
+}
 */
 
 /*********** 전역변수 ***********/
@@ -17,32 +43,16 @@ var mainSpeed = 500;
 var mainGap = 3000;
 var mainInterval;
 var mainPager = {off: '○', on: '●'};
-loaderInit();
+
 
 
 /*********** 사용자정의 ***********/
-function loaderInit() {
-	$(".loader-wrap").each(function(){
-		var $loaderWrap = $(this);
-		var $loader = $(this).find(".loader");
-		var $img = $(this).find("img");
-		var len = $img.length;	//2
-		var cnt = 0;
-		$loader.show();
-		$img.on("load", function(){
-			cnt++;
-			if(cnt == len) {
-				$loader.hide();
-				// main-wrap을 위한 곳
-				if($loaderWrap.hasClass("main-wrap")) {
-					mainInit();
-					mainPagerInit();
-					onMainLeave();
-				}
-			}
-		});
-	});
-}
+$(".loader-wrap").imagesLoaded(function(){
+	console.log($(this));
+	$(this).find(".loader").hide();
+});
+
+
 
 function mainInit() {
 	$(".main-wrap .slides").empty();
