@@ -47,9 +47,11 @@ var mainPager = {off: '○', on: '●'};
 
 
 /*********** 사용자정의 ***********/
-$(".loader-wrap").imagesLoaded(function(){
-	console.log($(this));
-	$(this).find(".loader").hide();
+$(".main-wrap").imagesLoaded(function(){
+	$(this.elements[0]).find(".loader").hide();
+	mainInit();
+	mainPagerInit();
+	onMainLeave();
 });
 
 
