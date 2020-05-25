@@ -60,8 +60,15 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .pf-wrap > .title {font-size: 1.5rem; text-align: center; font-weight: normal; margin:100px 0 50px 0;}
 .pf-wrap > .pfs {width: 102%; margin-left: -1%;}
 .pf-wrap .pf, 
-.pf-wrap .pf-sizer {width: 31.3333%; margin: 1%; float: left;}
+.pf-wrap .pf-sizer {position: relative; width: 31.3333%; margin: 1%; float: left; overflow: hidden;}
 
+.pf-wrap .pf {perspective: 400px;}
+.pf-wrap .pf > img {opacity: 0.7; transition: all 0.5s;} 
+.pf-wrap .pf:hover > img {opacity: 1; transform: scale(1.1);} 
+.pf-wrap .pf > .desc {width: 100%; padding: 1.25rem; background-color: #f8f8f8; bottom: 0; position: absolute; transition: all 0.5s; transform: rotateX(90deg); transform-origin: bottom;transform-style: preserve-3d; opacity: 0;}
+.pf-wrap .pf:hover > .desc {opacity: 1; transform: rotateX(0);}
+
+.pf-wrap .triangle {width: 10px; height: 10px; position: absolute; top: -5px; left: 50%; transform: translateX(-50%) rotate(45deg); background-color: #f8f8f8;}
 
 
 
@@ -71,6 +78,13 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 	.header > .logo {width: 5rem;}
 	.header > .navi-pc {display: none;}
 	.header > .navi-mobile {display: block; top: 1.625rem;}
+	.pf-wrap .pf, 
+	.pf-wrap .pf-sizer {width: 48%;}
+}
+
+@media screen and (max-width: 575px) {
+	.pf-wrap .pf, 
+	.pf-wrap .pf-sizer {width: 98%;}
 }
 
 

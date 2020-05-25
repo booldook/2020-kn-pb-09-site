@@ -70,6 +70,11 @@ function mainAni() {
 	.animate({"opacity": 1}, mainSpeed, mainInit);
 }
 
+function pfResize() {
+	var imgHeight = $(".pf").eq(0).find("img").height();
+	$(".pf").height(imgHeight * 0.8);
+	$(".pf").find("img").css("margin-top", (-imgHeight * 0.1)+"px");
+}
 
 /*********** 이벤트콜백 ***********/
 function onWingClick() {
@@ -94,6 +99,7 @@ function onWingClick() {
 }
 
 function onResize() {
+	pfResize();
 	// mobile -> pc
 	if($(this).outerWidth()	>= 768) {
 		isWingShow = true;
@@ -147,6 +153,7 @@ function onMainLoaded(){
 }
 
 function onPfsLoaded(){
+	pfResize();
 	$(this.elements[0]).masonry({
 		itemSelector: '.pf',
 		columnWidth: '.pf-sizer',
