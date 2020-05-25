@@ -1,5 +1,8 @@
 /*********** 사전지식 ***********/
-
+for(var i=0; i<$(".loader").length; i++) {
+	console.log(	$(".loader").eq(i).parent()	);
+	console.log(	$(".loader").eq(i).parents()	);
+}
 
 /*********** 전역변수 ***********/
 var scTop = 0;
@@ -12,11 +15,19 @@ var mainSpeed = 500;
 var mainGap = 3000;
 var mainInterval;
 var mainPager = {off: '○', on: '●'};
-mainInit();
+loaderInit();
+//mainInit();
 mainPagerInit();
 onMainLeave();
 
 /*********** 사용자정의 ***********/
+function loaderInit() {
+	$(".loading").show();
+	$(".loader").on("load", function(){
+		//console.log(	$(this).parents()	);
+	});
+}
+
 function mainInit() {
 	$(".main-wrap .slides").empty();
 	$($mainSlide[mainNow]).appendTo(".main-wrap .slides").removeClass("slide");
