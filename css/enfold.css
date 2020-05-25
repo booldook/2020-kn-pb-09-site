@@ -74,9 +74,10 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 
 /************ about-wrap **************/
 .about-wrap {}
-.about-slide {position: relative; border: 1px solid red;}
+.about-slide {position: relative;}
 .about-slide .slide {width: 70%; position: absolute; left: 15%; color: #aaa; 
 	font-size: 1.375rem; text-align: center; line-height: 2rem; opacity: 0; transition: all 1s;}
+.about-slide .slide:first-child {opacity: 1;}
 .about-slide .writer {margin-top: 3rem; color: #333;}
 .about-slide .bt {font-size: 6rem; color: #aaa; font-family: 'Economica', sans-serif; position: absolute; top: 0; cursor: pointer;}
 .about-slide .bt-prev {left: 2rem;}

@@ -44,6 +44,10 @@ var mainGap = 3000;
 var mainInterval;
 var mainPager = {off: '○', on: '●'};
 
+var $aboutSlide = $(".about-wrap .slide");
+var aboutNow = 0;
+var aboutLast = $aboutSlide.length - 1;
+aboutInit();
 
 
 /*********** 사용자정의 ***********/
@@ -76,6 +80,15 @@ function pfResize() {
 	$(".pf").find("img").css("margin-top", (-imgHeight * 0.1)+"px");
 }
 
+function aboutInit() {
+	$(".about-slide").height($aboutSlide.eq(0).height());
+}
+
+function aboutAni() {
+	$aboutSlide.css("opacity", 0);
+	$aboutSlide.eq(aboutNow).css("opacity", 1);
+}
+
 /*********** 이벤트콜백 ***********/
 function onWingClick() {
 	if(isWingShow) {
@@ -100,6 +113,7 @@ function onWingClick() {
 
 function onResize() {
 	pfResize();
+	aboutInit();
 	// mobile -> pc
 	if($(this).outerWidth()	>= 768) {
 		isWingShow = true;
@@ -160,6 +174,17 @@ function onPfsLoaded(){
 		percentPosition: true
 	});
 }
+
+function onAboutPrev() {
+	aboutNow = (aboutNow == 0) ? aboutLast: aboutNow - 1;
+	aboutAni();
+}
+
+function onAboutNext() {
+	aboutNow = (aboutNow == aboutLast) ? 0: aboutNow + 1;
+	aboutAni();
+}
+
 /*********** 이벤트등록 ***********/
 $(".bt-wing").click(onWingClick);
 $(window).resize(onResize);
@@ -171,3 +196,6 @@ $(".main-wrap").hover(onMainHover, onMainLeave);
 $(".main-wrap").imagesLoaded(onMainLoaded);
 
 $(".pf-wrap .pfs").imagesLoaded(onPfsLoaded);
+
+$(".about-slide .bt-prev").click(onAboutPrev);
+$(".about-slide .bt-next").click(onAboutNext);
