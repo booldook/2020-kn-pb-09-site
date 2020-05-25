@@ -185,6 +185,14 @@ function onAboutNext() {
 	aboutAni();
 }
 
+function onTwitterClick() {
+	// 1. 현재창에 링크
+	// location.href = '//twitter.com';
+	
+	// 2. 새창에 링크
+	window.open('//twitter.com');
+}
+
 /*********** 이벤트등록 ***********/
 $(".bt-wing").click(onWingClick);
 $(window).resize(onResize);
@@ -199,3 +207,5 @@ $(".pf-wrap .pfs").imagesLoaded(onPfsLoaded);
 
 $(".about-slide .bt-prev").click(onAboutPrev);
 $(".about-slide .bt-next").click(onAboutNext);
+
+$(".footer .twitter").click(onTwitterClick);

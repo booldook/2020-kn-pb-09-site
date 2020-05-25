@@ -93,7 +93,8 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .footer a:link {color: inherit; text-decoration: none;}
 .footer a:hover {color: #222; text-decoration: underline;}
 
-.footer .link {float: left; margin-right: 2rem; cursor: pointer;}
+.footer .links {margin-top: 2rem;}
+.footer .link {float: left; width: 50%; cursor: pointer;}
 .footer .link > * {float: left;}
 .footer .link > .icon {width: 2rem; height: 2rem; text-align: center; line-height: 2rem; 	
 	color: #fff; border-radius: 3px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); 
@@ -103,6 +104,11 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .footer .link > .desc {font-size: 0.75rem; color: #444; line-height: 0.875rem;}
 .footer .link > .desc > span {font-size: 0.625rem; color: #999;}
 .footer .link:hover > .desc > span {color: #444;}
+
+.footer .copyrights {font-size: 0.75rem; color: #999; margin-top: 4rem; padding: 1rem 0;}
+.footer .copyright {float: left;}
+.footer .footer-navis {float: right;}
+.footer .footer-navis > .navi {float: left; padding: 0 0.5rem;}
 
 
 
