@@ -93,11 +93,16 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .footer a:link {color: inherit; text-decoration: none;}
 .footer a:hover {color: #222; text-decoration: underline;}
 
-.footer .link {float: left; margin-right: 2rem;}
+.footer .link {float: left; margin-right: 2rem; cursor: pointer;}
 .footer .link > * {float: left;}
-.footer .link > .icon {width: 2rem; height: 2rem; text-align: center; line-height: 2rem; color: #fff; font-size: 1.5rem;}
+.footer .link > .icon {width: 2rem; height: 2rem; text-align: center; line-height: 2rem; 	
+	color: #fff; border-radius: 3px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); 
+	margin-right: 0.5rem;}
 .footer .link.twitter > .icon {background-color: #31cfff;}
 .footer .link.rss > .icon {background-color: #ffac30;}
+.footer .link > .desc {font-size: 0.75rem; color: #444; line-height: 0.875rem;}
+.footer .link > .desc > span {font-size: 0.625rem; color: #999;}
+.footer .link:hover > .desc > span {color: #444;}
 
 
 
