@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Economica&display=swap');
 
 body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .wrapper {max-width: 1200px; margin: auto; padding-top: 7.5rem;}
 .wrapper-small {padding: 4rem;}
 .loader {font-size: 2rem; color: #99f3d8; position: absolute; top: calc(50% - 1rem); left: calc(50% - 1rem); z-index: 9999;}
 .divide {border-bottom: 1px solid #ddd; width: 60px; margin: 50px auto;}
+.content-wrap > .title {font-size: 1.5rem; text-align: center; font-weight: normal; margin:100px 0 50px 0;}
 
 /************ header **************/
 /* .header {border: 1px solid red; padding: 0 100px; display: flex; justify-content: space-between; align-items: center;}
@@ -57,7 +59,6 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .slogan-wrap .content {float: left; width: 50%; padding-right: 4rem;}
 
 /************ pf-wrap **************/
-.pf-wrap > .title {font-size: 1.5rem; text-align: center; font-weight: normal; margin:100px 0 50px 0;}
 .pf-wrap > .pfs {width: 102%; margin-left: -1%;}
 .pf-wrap .pf, 
 .pf-wrap .pf-sizer {position: relative; width: 31.3333%; margin: 1%; float: left; overflow: hidden;}
@@ -69,6 +70,19 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .pf-wrap .pf:hover > .desc {opacity: 1; transform: rotateX(0);}
 
 .pf-wrap .triangle {width: 10px; height: 10px; position: absolute; top: -5px; left: 50%; transform: translateX(-50%) rotate(45deg); background-color: #f8f8f8;}
+
+
+/************ about-wrap **************/
+.about-wrap {}
+.about-slide {position: relative; border: 1px solid red;}
+.about-slide .slide {width: 70%; position: absolute; left: 15%; color: #aaa; 
+	font-size: 1.375rem; text-align: center; line-height: 2rem; opacity: 0; transition: all 1s;}
+.about-slide .writer {margin-top: 3rem; color: #333;}
+.about-slide .bt {font-size: 6rem; color: #aaa; font-family: 'Economica', sans-serif; position: absolute; top: 0; cursor: pointer;}
+.about-slide .bt-prev {left: 2rem;}
+.about-slide .bt-next {right: 2rem;}
+
+
 
 
 
