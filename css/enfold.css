@@ -5,7 +5,7 @@
 body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .wrapper {max-width: 1200px; margin: auto; padding-top: 7.5rem;}
 .wrapper-small {padding: 4rem;}
-.loading {font-size: 2rem; color: #99f3d8; position: absolute; top: calc(50% - 1rem); left: calc(50% - 1rem); display: none;}
+.loader {font-size: 2rem; color: #99f3d8; position: absolute; top: calc(50% - 1rem); left: calc(50% - 1rem); display: none; z-index: 9999;}
 
 /************ header **************/
 /* .header {border: 1px solid red; padding: 0 100px; display: flex; justify-content: space-between; align-items: center;}

@@ -1,8 +1,10 @@
 /*********** 사전지식 ***********/
+/*
 for(var i=0; i<$(".loader").length; i++) {
 	console.log(	$(".loader").eq(i).parent()	);
 	console.log(	$(".loader").eq(i).parents()	);
 }
+*/
 
 /*********** 전역변수 ***********/
 var scTop = 0;
@@ -16,15 +18,29 @@ var mainGap = 3000;
 var mainInterval;
 var mainPager = {off: '○', on: '●'};
 loaderInit();
-//mainInit();
-mainPagerInit();
-onMainLeave();
+
 
 /*********** 사용자정의 ***********/
 function loaderInit() {
-	$(".loading").show();
-	$(".loader").on("load", function(){
-		//console.log(	$(this).parents()	);
+	$(".loader-wrap").each(function(){
+		var $loaderWrap = $(this);
+		var $loader = $(this).find(".loader");
+		var $img = $(this).find("img");
+		var len = $img.length;	//2
+		var cnt = 0;
+		$loader.show();
+		$img.on("load", function(){
+			cnt++;
+			if(cnt == len) {
+				$loader.hide();
+				// main-wrap을 위한 곳
+				if($loaderWrap.hasClass("main-wrap")) {
+					mainInit();
+					mainPagerInit();
+					onMainLeave();
+				}
+			}
+		});
 	});
 }
 
