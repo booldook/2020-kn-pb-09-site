@@ -47,7 +47,10 @@ var mainPager = {off: '○', on: '●'};
 var $aboutSlide = $(".about-wrap .slide");
 var aboutNow = 0;
 var aboutLast = $aboutSlide.length - 1;
+var aboutInterval;
+var aboutGap = 4000;
 aboutInit();
+onAboutLeave();
 
 
 /*********** 사용자정의 ***********/
@@ -185,10 +188,18 @@ function onAboutNext() {
 	aboutAni();
 }
 
+function onAboutHover() {
+	clearInterval(aboutInterval);
+}
+
+function onAboutLeave() {
+	aboutInterval = setInterval(onAboutNext, aboutGap);
+}
+
 function onTwitterClick() {
 	// 1. 현재창에 링크
 	// location.href = '//twitter.com';
-	
+
 	// 2. 새창에 링크
 	window.open('//twitter.com');
 }
@@ -207,5 +218,6 @@ $(".pf-wrap .pfs").imagesLoaded(onPfsLoaded);
 
 $(".about-slide .bt-prev").click(onAboutPrev);
 $(".about-slide .bt-next").click(onAboutNext);
+$(".about-slide").hover(onAboutHover, onAboutLeave);
 
 $(".footer .twitter").click(onTwitterClick);
