@@ -47,15 +47,6 @@ var mainPager = {off: '○', on: '●'};
 
 
 /*********** 사용자정의 ***********/
-$(".main-wrap").imagesLoaded(function(){
-	$(this.elements[0]).find(".loader").hide();
-	mainInit();
-	mainPagerInit();
-	onMainLeave();
-});
-
-
-
 function mainInit() {
 	$(".main-wrap .slides").empty();
 	$($mainSlide[mainNow]).appendTo(".main-wrap .slides").removeClass("slide");
@@ -148,6 +139,20 @@ function onMainLeave() {
 	mainInterval = setInterval(onMainNext, mainGap);
 }
 
+function onMainLoaded(){
+	$(this.elements[0]).find(".loader").hide();
+	mainInit();
+	mainPagerInit();
+	onMainLeave();
+}
+
+function onPfsLoaded(){
+	$(this.elements[0]).masonry({
+		itemSelector: '.pf',
+		columnWidth: '.pf-sizer',
+		percentPosition: true
+	});
+}
 /*********** 이벤트등록 ***********/
 $(".bt-wing").click(onWingClick);
 $(window).resize(onResize);
@@ -156,3 +161,6 @@ $(window).scroll(onScroll);
 $(".main-wrap .bt-prev").click(onMainPrev);
 $(".main-wrap .bt-next").click(onMainNext);
 $(".main-wrap").hover(onMainHover, onMainLeave);
+$(".main-wrap").imagesLoaded(onMainLoaded);
+
+$(".pf-wrap .pfs").imagesLoaded(onPfsLoaded);

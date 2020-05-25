@@ -6,6 +6,7 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .wrapper {max-width: 1200px; margin: auto; padding-top: 7.5rem;}
 .wrapper-small {padding: 4rem;}
 .loader {font-size: 2rem; color: #99f3d8; position: absolute; top: calc(50% - 1rem); left: calc(50% - 1rem); z-index: 9999;}
+.divide {border-bottom: 1px solid #ddd; width: 60px; margin: 50px auto;}
 
 /************ header **************/
 /* .header {border: 1px solid red; padding: 0 100px; display: flex; justify-content: space-between; align-items: center;}
@@ -54,6 +55,13 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .slogan-wrap .title {font-size: 2.25rem; line-height: 1.1;}
 .slogan-wrap .contents {margin-top: 6rem; color: #aaa;}
 .slogan-wrap .content {float: left; width: 50%; padding-right: 4rem;}
+
+/************ pf-wrap **************/
+.pf-wrap > .title {font-size: 1.5rem; text-align: center; font-weight: normal; margin:100px 0 50px 0;}
+.pf-wrap > .pfs {width: 102%; margin-left: -1%;}
+.pf-wrap .pf, 
+.pf-wrap .pf-sizer {width: 31.3333%; margin: 1%; float: left;}
+
 
 
 
