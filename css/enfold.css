@@ -9,7 +9,7 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .loader {font-size: 2rem; color: #99f3d8; position: absolute; top: calc(50% - 1rem); left: calc(50% - 1rem); z-index: 9999;}
 .divide {border-bottom: 1px solid #ddd; width: 60px; margin: 50px auto;}
 .content-wrap > .title {font-size: 1.5rem; text-align: center; font-weight: normal; margin:100px 0 50px 0;}
-.ani {animation-fill-mode: forwards; animation-duration: 1s;}
+
 
 /************ header **************/
 /* .header {border: 1px solid red; padding: 0 100px; display: flex; justify-content: space-between; align-items: center;}
@@ -64,12 +64,9 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .pf-wrap .pf, 
 .pf-wrap .pf-sizer {position: relative; width: 31.3333%; margin: 1%; float: left; overflow: hidden;}
 
-.pf-wrap .pf {transform-style:preserve-3d; transform-origin: 0 150%; transform: rotateX(-90deg); opacity: 0; animation-name: persB; animation-duration: 1s; animation-fill-mode: forwards;}
+.pf-wrap .pf {transform-style:preserve-3d; transform-origin: 0 150%; transform: rotateX(-90deg); opacity: 0;}
 
-@keyframes persB {
-	0% {transform: rotateX(-90deg); opacity: 0;}
-	100% {transform: rotateX(0); opacity: 1;}
-}
+
 
 .pf-wrap .pf {perspective: 400px;}
 .pf-wrap .pf > img {opacity: 0.7; transition: all 0.5s;} 
@@ -143,8 +140,17 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 }
 
 /************ 애니메이션 **************/
+.ani {animation-fill-mode: forwards; animation-duration: 1s;animation-play-state: paused;}
+
+.fadeInB {animation-name: fadeInB; opacity: 0; transform: translateY(200px); }
 @keyframes fadeInB {
 	0% {opacity: 0; transform: translateY(200px);}
 	100% {opacity: 1; transform: translateY(0);}
+}
+
+.fadeInB {animation-name: persB; opacity: 0; transform: rotateX(-90deg); animation-play-state: paused;}
+@keyframes persB {
+	0% {transform: rotateX(-90deg); opacity: 0;}
+	100% {transform: rotateX(0); opacity: 1;}
 }
 
