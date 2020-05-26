@@ -31,6 +31,33 @@ function loaderInit() {
 	});
 }
 */
+/* dataSet 알아보기 */
+var $sample = $("#sample");
+console.log(	$sample	);
+console.log(	$sample[0]	);
+//getter
+console.log(	$sample.attr("id")	);
+console.log(	$sample.attr("class")	);
+console.log(	$sample.data("name")	);
+console.log(	$sample.data("speed")	);
+console.log(	$sample.data("booldook")	);
+console.log(	$sample.data("delay")	);
+//setter
+console.log(	$sample.attr("id", "sample2")	);
+console.log(	$sample.attr("class", "sample2")	);
+console.log(	$sample.data("name", "sample-data2")	);
+console.log(	$sample.data("speed", 5000)	);
+console.log(	$sample.data("booldook", false)	);
+console.log(	$sample.data("delay", 2000)	);
+//getter
+console.log(	$sample.attr("id")	);
+console.log(	$sample.attr("class")	);
+console.log(	$sample.data("name")	);
+console.log(	$sample.data("speed")	);
+console.log(	$sample.data("booldook")	);
+console.log(	$sample.data("delay")	);
+
+
 
 /*********** 전역변수 ***********/
 var scTop = 0;
