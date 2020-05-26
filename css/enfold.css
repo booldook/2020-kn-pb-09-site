@@ -57,16 +57,12 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 /************ slogan-wrap **************/
 .slogan-wrap .title {font-size: 2.25rem; line-height: 1.1;}
 .slogan-wrap .contents {margin-top: 6rem; color: #aaa;}
-.slogan-wrap .content {float: left; width: 50%; padding-right: 4rem; opacity: 0; transform: translateY(200px);}
+.slogan-wrap .content {float: left; width: 50%; padding-right: 4rem;}
 
 /************ pf-wrap **************/
 .pf-wrap > .pfs {width: 102%; margin-left: -1%; perspective: 800px;}
 .pf-wrap .pf, 
 .pf-wrap .pf-sizer {position: relative; width: 31.3333%; margin: 1%; float: left; overflow: hidden;}
-
-.pf-wrap .pf {transform-style:preserve-3d; transform-origin: 0 150%; transform: rotateX(-90deg); opacity: 0;}
-
-
 
 .pf-wrap .pf {perspective: 400px;}
 .pf-wrap .pf > img {opacity: 0.7; transition: all 0.5s;} 
@@ -148,7 +144,7 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 	100% {opacity: 1; transform: translateY(0);}
 }
 
-.fadeInB {animation-name: persB; opacity: 0; transform: rotateX(-90deg); animation-play-state: paused;}
+.persB {animation-name: persB; opacity: 0; transform: rotateX(-90deg);transform-style:preserve-3d; transform-origin: 0 150%;}
 @keyframes persB {
 	0% {transform: rotateX(-90deg); opacity: 0;}
 	100% {transform: rotateX(0); opacity: 1;}
