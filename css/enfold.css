@@ -60,9 +60,16 @@ body {height: 5000px; font-family: 'Open Sans', sans-serif;}
 .slogan-wrap .content {float: left; width: 50%; padding-right: 4rem; opacity: 0; transform: translateY(200px);}
 
 /************ pf-wrap **************/
-.pf-wrap > .pfs {width: 102%; margin-left: -1%;}
+.pf-wrap > .pfs {width: 102%; margin-left: -1%; perspective: 800px;}
 .pf-wrap .pf, 
 .pf-wrap .pf-sizer {position: relative; width: 31.3333%; margin: 1%; float: left; overflow: hidden;}
+
+.pf-wrap .pf {transform-style:preserve-3d; transform-origin: 0 150%; transform: rotateX(-90deg); opacity: 0; animation-name: persB; animation-duration: 1s; animation-fill-mode: forwards;}
+
+@keyframes persB {
+	0% {transform: rotateX(-90deg); opacity: 0;}
+	100% {transform: rotateX(0); opacity: 1;}
+}
 
 .pf-wrap .pf {perspective: 400px;}
 .pf-wrap .pf > img {opacity: 0.7; transition: all 0.5s;} 
