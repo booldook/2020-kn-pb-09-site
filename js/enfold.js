@@ -59,6 +59,25 @@ console.log(	$sample.data("booldook")	);
 console.log(	$sample.data("delay")	);
 */
 
+// 크기, 위치
+console.log(	$(".slogan-wrap").width(), $(".slogan-wrap").height()	);
+console.log(	$(".slogan-wrap").innerWidth(), $(".slogan-wrap").innerHeight()	);
+console.log(	$(".slogan-wrap").outerWidth(), $(".slogan-wrap").outerHeight()	);
+console.log(	$(".slogan-wrap").outerWidth(true), $(".slogan-wrap").outerHeight(true)	);
+// width(), height() -> margin, padding, border를 제외한 크기
+// innerWidth(), innerHeight() -> margin, border를 제외한 크기 - padding포함
+// outerWidth(), outerHeight() -> margin을 제외한 크기 - padding, border포함
+// outerWidth(true), outerHeight(true) -> margin, padding, border포함
+
+console.log(	$(".slogan-wrap").offset()	);
+console.log(	$(".slogan-wrap").position()	);
+console.log(	$(".slogan-wrap .contents").offset()	);		// margin을 제외한 거리
+console.log(	$(".slogan-wrap .contents").position()	);	// margin도 포함한 거리
+
+console.log(	$(".pf").eq(0).find(".desc").offset()	);		// 문서 끝으로 부터의 거리
+console.log(	$(".pf").eq(0).find(".desc").position()	);	// 기준점(내가 position모델일때 나의 부모)으로 부터의 거리
+
+
 /*********** 전역변수 ***********/
 var scTop = 0;
 var isWingShow = false;
