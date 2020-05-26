@@ -57,7 +57,7 @@ console.log(	$sample.data("name")	);
 console.log(	$sample.data("speed")	);
 console.log(	$sample.data("booldook")	);
 console.log(	$sample.data("delay")	);
-*/
+
 
 // 크기, 위치
 console.log(	$(".slogan-wrap").width(), $(".slogan-wrap").height()	);
@@ -77,6 +77,8 @@ console.log(	$(".slogan-wrap .contents").position()	);	// margin도 포함한 �
 console.log(	$(".pf").eq(0).find(".desc").offset()	);		// 문서 끝으로 부터의 거리
 console.log(	$(".pf").eq(0).find(".desc").position()	);	// 기준점(내가 position모델일때 나의 부모)으로 부터의 거리
 
+console.log(	$(window).scrollTop()	);		// 스크롤이 되어서 문서가 얼마나 위로 올라갔는지...
+*/
 
 /*********** 전역변수 ***********/
 var scTop = 0;
