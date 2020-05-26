@@ -194,7 +194,7 @@ function onScroll() {
 		var top = $(this).offset().top;
 		if(sum > top) {
 			if($(this).data("delay")) $(this).css("animation-delay", $(this).data("delay"));
-			$(this).css("animation-name", $(this).data("ani"));
+			$(this).css("animation-play-state", "running");
 		}
 	});	
 }
