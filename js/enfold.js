@@ -189,7 +189,14 @@ function onResize() {
 
 function onScroll() {
 	scTop = $(this).scrollTop();
-	
+	var sum = scTop + winHei;
+	var content = $(".slogan-wrap .content").offset().top;
+	if(sum > content) {
+		console.log("나타남");
+	}
+	else {
+		console.log("안보임");
+	}
 }
 
 function onMainPrev() {
@@ -259,8 +266,8 @@ function onTwitterClick() {
 
 /*********** 이벤트등록 ***********/
 $(".bt-wing").click(onWingClick);
-$(window).resize(onResize);
-$(window).scroll(onScroll);
+$(window).resize(onResize).trigger("resize");
+$(window).scroll(onScroll).trigger("scroll");
 
 $(".main-wrap .bt-prev").click(onMainPrev);
 $(".main-wrap .bt-next").click(onMainNext);
