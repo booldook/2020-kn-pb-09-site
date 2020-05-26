@@ -190,8 +190,12 @@ function onResize() {
 function onScroll() {
 	scTop = $(this).scrollTop();
 	var sum = scTop + winHei;
+
+
+	
 	$(".ani").each(function(){
 		var top = $(this).offset().top;
+		console.log(top);
 		if(sum > top) {
 			if($(this).data("delay")) $(this).css("animation-delay", $(this).data("delay"));
 			$(this).css("animation-play-state", "running");
