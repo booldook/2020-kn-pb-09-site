@@ -30,8 +30,9 @@ function loaderInit() {
 		});
 	});
 }
-*/
-/* dataSet 알아보기 */
+ 
+// dataSet 알아보기
+// API - Application Provider Interface
 var $sample = $("#sample");
 console.log(	$sample	);
 console.log(	$sample[0]	);
@@ -56,8 +57,7 @@ console.log(	$sample.data("name")	);
 console.log(	$sample.data("speed")	);
 console.log(	$sample.data("booldook")	);
 console.log(	$sample.data("delay")	);
-
-
+*/
 
 /*********** 전역변수 ***********/
 var scTop = 0;
