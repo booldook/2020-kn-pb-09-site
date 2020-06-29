@@ -190,9 +190,6 @@ function onResize() {
 function onScroll() {
 	scTop = $(this).scrollTop();
 	var sum = scTop + winHei;
-
-
-	
 	$(".ani").each(function(){
 		var top = $(this).offset().top;
 		console.log(top);
